@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +30,12 @@ public class CardView extends AppCompatActivity {
         //Define layout
         RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(this);
         recyclerViewCardView.setLayoutManager(layoutManager);
+
+        //Alterar para LinearLayout Horizontal
+//        LinearLayoutManager layoutManager= new LinearLayoutManager(this);
+//        layoutManager.setOrientation(LinearLayout.HORIZONTAL);
+//        recyclerViewCardView.setLayoutManager(layoutManager);
+
 
         //Define adapter
         this.criaPostagens();
