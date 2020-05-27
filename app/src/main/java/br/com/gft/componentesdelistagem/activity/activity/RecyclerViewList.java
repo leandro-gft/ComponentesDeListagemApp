@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import br.com.gft.componentesdelistagem.R;
+import br.com.gft.componentesdelistagem.activity.adapter.AdapterFilmes;
 
 public class RecyclerViewList extends AppCompatActivity {
 
@@ -20,13 +21,13 @@ public class RecyclerViewList extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         //Configurar Adapter
-
+        AdapterFilmes adapter = new AdapterFilmes();
 
         //Configurar RecyclerView
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-    //    recyclerView.setAdapter();
+        recyclerView.setAdapter(adapter);
     }
 }
