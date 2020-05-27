@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="32dp"
+    >
+
+    <TextView
+        android:id="@+id/textUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Leandro Sacchi"
+        />
+
+    <TextView
+        android:id="@+id/textMomento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agora mesmo"
+        />
+    
+    <ImageView
+        android:id="@+id/imgPost"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/imagem1"/>
+
+    <TextView
+        android:id="@+id/textPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="#TBT viagem legal"
+        />
+
+
+
+</LinearLayout>
