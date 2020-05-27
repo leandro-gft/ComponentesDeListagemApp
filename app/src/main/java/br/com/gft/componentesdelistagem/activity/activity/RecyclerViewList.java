@@ -6,13 +6,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import br.com.gft.componentesdelistagem.R;
+import br.com.gft.componentesdelistagem.activity.RecyclerItemClickListener;
 import br.com.gft.componentesdelistagem.activity.adapter.AdapterFilmes;
 import br.com.gft.componentesdelistagem.activity.model.Filme;
 
@@ -41,6 +45,30 @@ public class RecyclerViewList extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+
+        //Adicionar evento de clique
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(
+                getApplicationContext(),
+                recyclerView,
+                new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Toast.makeText(getApplicationContext(), "Item selecionado: "+filmes.get(position).getTituloFilme(), Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        Toast.makeText(getApplicationContext(), "Click longo em: "+filmes.get(position).getTituloFilme(), Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    }
+                }
+        ));
+
     }
 
 
