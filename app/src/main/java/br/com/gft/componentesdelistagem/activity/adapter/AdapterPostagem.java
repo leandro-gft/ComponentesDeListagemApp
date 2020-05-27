@@ -11,9 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.gft.componentesdelistagem.R;
+import br.com.gft.componentesdelistagem.activity.model.Postagem;
+
 
 public class AdapterPostagem extends RecyclerView.Adapter<AdapterPostagem.MyViewHolder> {
+
+    private List<Postagem> postagens;
+
+    public AdapterPostagem(List<Postagem> posts) {
+        this.postagens = posts;
+    }
 
     @NonNull
     @Override
@@ -25,15 +36,16 @@ public class AdapterPostagem extends RecyclerView.Adapter<AdapterPostagem.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.usuario.setText("Leandro Pompilio Sacchi");
-        holder.momento.setText("Agora mesmo");
-        holder.post.setText("#TBT viagem massa");
-        holder.img.setImageResource(R.drawable.imagem1);
+        Postagem post = postagens.get(position);
+        holder.usuario.setText(post.getNomeUsuario());
+        holder.momento.setText(post.getMomento());
+        holder.post.setText(post.getPostagem());
+        holder.img.setImageResource(post.getImagem());
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return postagens.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

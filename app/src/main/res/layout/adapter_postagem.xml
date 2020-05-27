@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="32dp"
-    >
+    android:layout_margin="10dp"
+    android:elevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
 
     <TextView
         android:id="@+id/textUsuario"
@@ -11,15 +23,13 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Leandro Sacchi"
-        />
+        android:text="Leandro Sacchi"/>
 
     <TextView
         android:id="@+id/textMomento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agora mesmo"
-        />
+        android:text="Agora mesmo"/>
     
     <ImageView
         android:id="@+id/imgPost"
@@ -35,6 +45,32 @@
         android:text="#TBT viagem legal"
         />
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CURTI"
+            style="?attr/buttonBarButtonStyle"
+            android:drawableLeft="@drawable/ic_favorite_grey_24dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?attr/buttonBarButtonStyle"
+            android:text="COMENTAR"
+            android:drawableLeft="@drawable/ic_chat_bubble_grey_24dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
