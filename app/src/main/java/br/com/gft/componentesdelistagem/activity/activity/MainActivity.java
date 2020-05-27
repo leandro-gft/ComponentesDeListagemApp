@@ -1,4 +1,4 @@
-package br.com.gft.componentesdelistagem;
+package br.com.gft.componentesdelistagem.activity.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import br.com.gft.componentesdelistagem.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,11 +50,9 @@ public class MainActivity extends AppCompatActivity {
                         show();
             }
         });
-
-
     }
 
     public void nextRecyclerView(View view){
-     //   startActivity(new Intent(this, RecyclerView.class));
+        startActivity(new Intent(this, RecyclerViewList.class));
     }
 }
